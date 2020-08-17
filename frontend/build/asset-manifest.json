@@ -1,0 +1,32 @@
+{
+  "files": {
+    "main.css": "/static/css/main.969d281d.chunk.css",
+    "main.js": "/static/js/main.24cf085d.chunk.js",
+    "main.js.map": "/static/js/main.24cf085d.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.d5e54e2d.js",
+    "runtime-main.js.map": "/static/js/runtime-main.d5e54e2d.js.map",
+    "static/css/2.5afbf740.chunk.css": "/static/css/2.5afbf740.chunk.css",
+    "static/js/2.1d69c059.chunk.js": "/static/js/2.1d69c059.chunk.js",
+    "static/js/2.1d69c059.chunk.js.map": "/static/js/2.1d69c059.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.ca8a31fa12bd5be289f93f6f039c4bee.js": "/precache-manifest.ca8a31fa12bd5be289f93f6f039c4bee.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/2.5afbf740.chunk.css.map": "/static/css/2.5afbf740.chunk.css.map",
+    "static/css/main.969d281d.chunk.css.map": "/static/css/main.969d281d.chunk.css.map",
+    "static/js/2.1d69c059.chunk.js.LICENSE.txt": "/static/js/2.1d69c059.chunk.js.LICENSE.txt",
+    "static/media/model.scss": "/static/media/FontFont_FF.Mark.Pro.Medium.8531ae94.otf",
+    "static/media/generalDetails.scss": "/static/media/calendar.dc5d5419.svg",
+    "static/media/tag.scss": "/static/media/cliseTag.3263f579.svg",
+    "static/media/notification.svg": "/static/media/notification.51629ca4.svg",
+    "static/media/playIcon.svg": "/static/media/playIcon.038ce551.svg",
+    "static/media/profileIcon.svg": "/static/media/profileIcon.3af9fdcb.svg",
+    "static/media/samplepicture.svg": "/static/media/samplepicture.5b586866.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d5e54e2d.js",
+    "static/css/2.5afbf740.chunk.css",
+    "static/js/2.1d69c059.chunk.js",
+    "static/css/main.969d281d.chunk.css",
+    "static/js/main.24cf085d.chunk.js"
+  ]
+}
