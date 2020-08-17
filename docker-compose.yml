@@ -1,41 +1,64 @@
-version: "3.5"
+version: '3'
+
 services:
-    db:
-      deploy:
-        restart_policy:
-          condition: any
-      image: lifestores/pharmiq-db:dev
-      build:
-        dockerfile: Dockerfile
-        context: db/
-      volumes:
-          - db:/var/lib/postgresql/data
-    api:
-      deploy:
-        restart_policy:
-          condition: any
-      depends_on:
-          - db
-      build:
-        dockerfile: Dockerfile
-        context: api/
-      image: lifestores/pharmiq-api:dev
-    web:
-      deploy:
-        restart_policy:
-          condition: any
-      build:
-          dockerfile: Dockerfile
-          context: web/
-      image: lifestores/pharmiq-web:dev
-    dba:
-      deploy:
-        restart_policy:
-          condition: any
-      image: dockage/phppgadmin:latest
-      ports:
-          - "90:80"
-      environment:
-          - PHP_PG_ADMIN_SERVER_HOST=db
-volumes:
+  #MySQL Service
   db:
+    deploy:
+      restart_policy:
+        condition: any
+    image: mysql:5.7.22
+    tty: true
+    volumes:
+      - pharmiq_data:/var/lib/mysql
+      - ./backend/mysql/my.cnf:/etc/mysql/my.cnf
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_DATABASE: 'pharmiq'
+      MYSQL_ROOT_PASSWORD: 'pharmiq'
+      SERVICE_TAGS: dev
+      SERVICE_NAME: mysql
+
+  #api Service
+  api:
+    deploy:
+      restart_policy:
+        condition: any
+    build:
+        dockerfile: Dockerfile
+        context: pharmiq-api/
+    image: lifestores/pharmiq-api:dev
+    volumes:
+      - ./pharmiq-api:/code
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    
+    # web interface service
+  web:
+    deploy:
+        restart_policy:
+            condition: any
+    build:
+        dockerfile: Dockerfile
+        context: pharmiq-web/
+    ports:
+        - 80:80
+    image: lifestores/pharmiq-web:dev
+
+  #phpmyadmin Service
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin
+    tty: true
+    environment:
+      SERVICE_TAGS: dev
+      SERVICE_NAME: phpmyadmin
+    ports:
+      - "90:80"
+
+#Volumes
+volumes:
+  pharmiq_data:
+
