@@ -57,3 +57,4 @@ apscheduler
 numpy
 pandas
 sklearn
+gunicorn

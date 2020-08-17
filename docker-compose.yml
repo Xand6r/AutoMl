@@ -1,0 +1,41 @@
+version: "3.5"
+services:
+    db:
+      deploy:
+        restart_policy:
+          condition: any
+      image: lifestores/pharmiq-db:dev
+      build:
+        dockerfile: Dockerfile
+        context: db/
+      volumes:
+          - db:/var/lib/postgresql/data
+    api:
+      deploy:
+        restart_policy:
+          condition: any
+      depends_on:
+          - db
+      build:
+        dockerfile: Dockerfile
+        context: api/
+      image: lifestores/pharmiq-api:dev
+    web:
+      deploy:
+        restart_policy:
+          condition: any
+      build:
+          dockerfile: Dockerfile
+          context: web/
+      image: lifestores/pharmiq-web:dev
+    dba:
+      deploy:
+        restart_policy:
+          condition: any
+      image: dockage/phppgadmin:latest
+      ports:
+          - "90:80"
+      environment:
+          - PHP_PG_ADMIN_SERVER_HOST=db
+volumes:
+  db:
