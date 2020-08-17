@@ -98,36 +98,36 @@ WSGI_APPLICATION = "astriaai.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": os.environ.get("DB_NAME", "astria"),
-        "USER": os.environ.get("DB_USER", "postgres"),
-        "PASSWORD": os.environ.get("DB_PASSWORD", ""),
-        "HOST": os.environ.get("DB_HOST", "db"),
-        "PORT": os.environ.get("PORT", "5432"),
-     }
- }
-
 # DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'OPTIONS': {
-#             'read_default_file': '../mysql/my.cnf',
-#             'charset': 'utf8mb4',
-#         },
-#         # Tell Django to build the test database with the 'utf8mb4' character set
-#         'TEST': {
-#             'CHARSET': 'utf8mb4',
-#             'COLLATION': 'utf8mb4_unicode_ci',
-#         },
-#         'NAME': 'pharmiq',
-#         'USER': 'root',
-#         'PASSWORD': 'pharmiq',
-#         'HOST': 'db',
-#         'PORT': 3306,
-#     }
-# }
+#     "default": {
+#         "ENGINE": "django.db.backends.postgresql",
+#         "NAME": os.environ.get("DB_NAME", "astria"),
+#         "USER": os.environ.get("DB_USER", "postgres"),
+#         "PASSWORD": os.environ.get("DB_PASSWORD", ""),
+#         "HOST": os.environ.get("DB_HOST", "db"),
+#         "PORT": os.environ.get("PORT", "5432"),
+#      }
+#  }
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'OPTIONS': {
+            'read_default_file': '../mysql/my.cnf',
+            'charset': 'utf8mb4',
+        },
+        # Tell Django to build the test database with the 'utf8mb4' character set
+        'TEST': {
+            'CHARSET': 'utf8mb4',
+            'COLLATION': 'utf8mb4_unicode_ci',
+        },
+        'NAME': 'pharmiq',
+        'USER': 'root',
+        'PASSWORD': 'pharmiq',
+        'HOST': 'db',
+        'PORT': 3306,
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
