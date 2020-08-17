@@ -1,5 +1,5 @@
 from django.db import models
-from django.contrib.postgres.fields import JSONField
+from django_mysql.models import Model, JSONField
 
 # the different states which a project can have
 PROJECT_CREATED = 'PROJECT_CREATED'

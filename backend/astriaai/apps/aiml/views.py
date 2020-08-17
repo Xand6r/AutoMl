@@ -144,7 +144,7 @@ class ModelApiView(viewsets.GenericViewSet):
     
     @action(detail=False, methods=['get'], url_path='all')
     def get_all_models(self, info):
-            data = Model.objects.all().order_by("-id")
+            data = Model.objects.all()
 
             return JsonResponse(
                 {   
