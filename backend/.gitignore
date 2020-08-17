@@ -1,0 +1,11 @@
+venv
+ocr/__pycache__
+astriaai/__pycache__
+summariser/__pycache__
+ttsApp/__pycache__
+*.pyc
+*__pycache__
+.vscode
+db.sqlite3
+.idea
+.env

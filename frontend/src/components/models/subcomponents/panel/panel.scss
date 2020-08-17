@@ -1,0 +1,52 @@
+// import the dependencies
+@import '../../../../stylesheets/utilities';
+@import '../../../../stylesheets/fonts';
+@import '../../../../stylesheets/colors';
+
+.panel{
+    width: 100%;
+    padding-right: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 50px;
+    font-family: 'markpro-bold';
+    @extend %eighteenpx;
+    color: $dark-blue;
+    position: relative;
+
+    &__tag{
+        position: absolute;
+        top: -15px;
+        z-index: 100;
+        left: -41px;
+        width: 150px;
+        height: 22px;
+        background: transparentize($color: #E4EAFD, $amount: .7);
+        color: $light-blue;
+        border-radius: 10px 0 10px 0px;
+        text-transform: capitalize;
+        font-size: 9px;
+        line-height: 11px;
+        @extend %centered-flex;
+        font-family: 'markpro-bold';
+        text-transform: uppercase;
+    }
+    &__title{
+        text-transform: capitalize;
+    }
+
+    .panel__statistics{
+        display: flex;
+        width: 350px;
+        justify-content: space-between;
+    }
+}
+
+.ant-statistic-content{
+    text-align: center;
+    
+}
+span.ant-statistic-content-value-int{
+    @extend %sixteenpx;
+}

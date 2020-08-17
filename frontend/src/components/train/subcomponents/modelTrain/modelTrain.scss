@@ -1,0 +1,27 @@
+@import '../../../../stylesheets/colors';
+@import '../../../../stylesheets/utilities';
+
+.expertise__train_button{
+    height: 250px;
+    width: 250px;
+    background-color: #162359;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    align-self: center;
+    justify-self: center;
+    margin: 0 auto;
+    font-family: 'markpro-bold';
+    cursor: pointer;
+    transition: 500ms;
+
+    &:hover{
+        transform: scale(1.09);
+    }
+    &:active{
+        transform: scale(1.05);
+    }
+}

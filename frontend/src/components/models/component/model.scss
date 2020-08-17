@@ -1,0 +1,72 @@
+// import the dependencies
+@import '../../../stylesheets/utilities';
+@import '../../../stylesheets/fonts';
+@import '../../../stylesheets/colors';
+
+
+.model{
+
+    .--heading{
+        margin-top: 50px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    &__header{
+        @extend %fourtypx;
+        text-align: center;
+        margin-bottom: 25px;
+        color: $dark-blue;
+        span{
+            margin-right: 10px;
+        }
+    }
+    &__subheader{
+        max-width: 523px;
+        color: $light-navy-blue;
+        @extend %eighteenpx;
+        text-align: center;
+        font-family: 'markpro-medium';
+        margin-bottom: 60px;
+    }
+
+    &__collapse{
+        margin: 0 50px;
+    }
+
+}
+
+[data-theme='compact'] .site-collapse-custom-collapse .site-collapse-custom-panel,
+.site-collapse-custom-collapse .site-collapse-custom-panel {
+  background: #F5F5F9;
+  border-radius: 2px;
+  margin-bottom: 24px;
+  border: 0px;
+  overflow: hidden;
+}
+
+.ant-collapse-borderless{
+    background: #F5F5F9;
+}
+.ant-collapse-header{
+    display: flex;
+}
+.ant-collapse.ant-collapse-borderless.ant-collapse-icon-position-left.site-collapse-custom-collapse {
+    padding: 30px 0px 20px;
+}
+.ant-spin-text{
+    font-family: 'markpro-medium';
+    font-size: 15px;
+}
+.ant-spin-nested-loading {
+    width: 100%;
+}
+.ant-statistic-content {
+    text-align: center;
+    font-family: 'markpro-bold';
+    *{
+        font-size: 14px !important;
+    }
+}
