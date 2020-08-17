@@ -1,0 +1,43 @@
+  version: '3'
+    
+  services:
+    #MySQL Service
+    db:
+      image: mysql:5.7.22
+      container_name: db_newalsa
+      tty: true
+      volumes:
+        - pharmiq_data:/var/lib/mysql
+        - ./mysql/my.cnf:/etc/mysql/my.cnf
+      ports:
+        - "3306:3306"
+      environment:
+        MYSQL_DATABASE: 'pharmiq'
+        MYSQL_ROOT_PASSWORD: 'pharmiq'
+        SERVICE_TAGS: dev
+        SERVICE_NAME: mysql
+
+    #phpmyadmin Service
+    phpmyadmin:
+      image: phpmyadmin/phpmyadmin
+      container_name: phpmyadmin_newelsa
+      tty: true
+      environment:
+        SERVICE_TAGS: dev
+        SERVICE_NAME: phpmyadmin
+      ports:
+        - "8080:80"
+
+    #web Service
+    web:
+      build: .
+      command: python manage.py runserver 0.0.0.0:8000
+      volumes:
+        - .:/code
+      ports:
+        - "8000:8000"
+      depends_on:
+        - db
+#Volumes
+  volumes:
+    pharmiq_data:
